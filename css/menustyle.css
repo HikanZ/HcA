@@ -3,9 +3,11 @@
   padding: 0;
   font-family: Noto Sans, sans-serif;
   box-sizing: border-box;
+  
 }
-body{
-background: url('../img/MainPiclite.png') center;
+body,html{
+  height: 100%;
+  background: url('../img/MainPiclite.png') center;
 }
 .services-section{
   //background: url(../img/MainPiclite.png);
@@ -46,7 +48,7 @@ background: url('../img/MainPiclite.png') center;
 }
 
 .service-box{
-  max-width: 33.33%;
+  max-width: 25px;
   min-width: 300px;
   padding: 10px;
   text-align: center;

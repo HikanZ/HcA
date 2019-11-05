@@ -106,6 +106,6 @@ body,html{
 @media screen and (max-width:480px) {
   .service-box{
     min-width: 170px;
-    max-width: 33,33%;
+    max-width: 25%;
   }
 }

@@ -1,0 +1,36 @@
+<br><!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/questionstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  </head>
+  <body>
+    <div class="services-section">
+      <div class="inner-width">
+        <h1 class="section-title">Relatório </h1>
+	<br>
+	<h2 class="section-date"> <label id="dayweek"></label>, <label id="day"></label> de <label id="month"></label> de <label id="year"></label> 
+          <script>
+          var d = new Date();
+          var days = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
+          document.getElementById("dayweek").innerHTML = days[d.getDay()];
+          document.getElementById("day").innerHTML = d.getDate();
+          var months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+          document.getElementById("month").innerHTML = months[d.getMonth()];
+          document.getElementById("year").innerHTML = d.getFullYear();
+          </script> 
+        </h2>
+        <div class="border"></div>
+        <div class="services-container">
+	  <div class="services-quest">
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

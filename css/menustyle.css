@@ -5,10 +5,10 @@
   box-sizing: border-box;
 }
 body{
-background: url('../img/MainPic.png') center;
+background: url('../img/MainPiclite.png') center;
 }
 .services-section{
-  //background: url(../img/MainPic.png);
+  //background: url(../img/MainPiclite.png);
   background-size: cover;
   padding: 100px 0;
 }
@@ -52,6 +52,8 @@ background: url('../img/MainPic.png') center;
   text-align: center;
   color: #ddd;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-icon{

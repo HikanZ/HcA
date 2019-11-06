@@ -6,25 +6,12 @@ body,html{
   font-family: sans-serif;
 background: url('../img/MainPiclite.png') center;
 }
-.d1{
-  width: 25%;
-  height: 100%;
-  overflow: hidden;
-  float: left;
-  
-}
-.d2{
-  width: 25%;
-  height: 100%;
-  overflow: hidden;
-  float: right;
-  
-}
+
 .login{
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 700px;
+  max-width: 500px;
   //right: 0;
   margin-left: auto;
   margin-right: auto;
@@ -33,7 +20,7 @@ background: url('../img/MainPiclite.png') center;
   color: white;
 }
 .login form{
-  margin: 160px 30px;
+  margin: 100px 30px;
   padding-right: 50px;
 }
 .login h1{
@@ -53,7 +40,8 @@ background: url('../img/MainPiclite.png') center;
   //border-bottom: 1px solid #ff6600;
 }
 .textbox i{
-  width: 40px;
+  min-width: 35px;
+  width: 20px;
   float: left;
   text-align: center;
 }
@@ -85,10 +73,11 @@ background: url('../img/MainPiclite.png') center;
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  top: 5px;
   left: 45px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 19px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -109,8 +98,8 @@ background: url('../img/MainPiclite.png') center;
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 19px;
+  width: 19px;
   background-color: #eee;
 }
 
@@ -138,8 +127,8 @@ background: url('../img/MainPiclite.png') center;
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 6px;
+  top: 1px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -147,4 +136,25 @@ background: url('../img/MainPiclite.png') center;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+@media screen and (max-width:960px) {
+	.login form{
+	  margin: 30px 30px;
+	  padding-right: 50px;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.login form{
+	  margin: 30px 30px;
+	  padding-right: 50px;
+	}
+}
+
+@media screen and (max-width:480px) {
+	.login form{
+	  margin: 30px 30px;
+	  padding-right: 50px;
+	}
 }

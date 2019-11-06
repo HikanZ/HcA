@@ -1,16 +1,19 @@
-<br><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="css/questionstyle.css">
+    <link rel="stylesheet" href="css/menustyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    
+
   </head>
   <body>
+
     <div class="services-section">
       <div class="inner-width">
-        <h1 class="section-title">Relatório </h1>
+        <h1 class="section-title">Visão Geral </h1>
 	<br>
 	<h2 class="section-date"> <label id="dayweek"></label>, <label id="day"></label> de <label id="month"></label> de <label id="year"></label> 
           <script>
@@ -23,12 +26,33 @@
           document.getElementById("year").innerHTML = d.getFullYear();
           </script> 
         </h2>
-        <div class="border"></div>
+		<div class="border"></div>
         <div class="services-container">
-	  <div class="services-quest">
+
+          <div class="service-box">
+			<div class="service-desc">
+              Insira o mês e o ano
+            </div>
+            <div class="service-icon" onclick="window.location.href='visao.html'">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="service-title">MENSAL</div>
+            
+          </div>
+		  
+		  <div class="service-box">
+		    <div class="service-desc">
+              Insira o ano
+            </div>
+            <div class="service-icon" onclick="window.location.href='visao.html'">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="service-title">ANUAL</div>
 
           </div>
-          
+
+
+          </div>
         </div>
       </div>
     </div>

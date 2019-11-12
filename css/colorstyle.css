@@ -1,0 +1,30 @@
+:root {
+  /*--main-color: #82ccdd; //COR PADRÃO1*/
+  /*--main-color: #0099ff; //COR PADRÃO2*/
+  /*--main-color: #3399ff; //COR PADRÃO3*/
+  --main-color: #4db8ff; //COR PADRÃO4
+  --main-bg-color: coral;
+  --main-txt-color: white;
+  --second-txt-color: #ddd;
+  --main-padding: 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0099ff;
+}

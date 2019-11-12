@@ -1,0 +1,38 @@
+CREATE TABLE users (
+idUsers int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+uidUsers TINYTEXT NOT NULL,
+uidLastUsers TINYTEXT NOT NULL,
+emailUsers TINYTEXT NOT NULL,
+pwdUsers LONGTEXT NOT NULL,
+roleUsers TINYTEXT,
+birthUsers TINYTEXT,
+adminSystem INT(1) NOT NULL
+);
+
+CREATE TABLE ropgroup (
+idGroup int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+numGroup int(11) NOT NULL,
+versionGroup int(4) NOT NULL,
+nameGroup TINYTEXT NOT NULL,
+qtropGroup INT(11) NOT NULL
+);
+
+INSERT INTO ropgroup (numGroup, versionGroup, nameGroup, qtropGroup) VALUES (1, 1955, 'Back to the Future', 5);
+
+CREATE TABLE rop (
+idRop int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+numRop int(11) NOT NULL,
+versionRop int(11) NOT NULL,
+idGroup int(11), 
+labelRop LONGTEXT NOT NULL,
+classRop INT(1),
+FOREIGN KEY (idGroup) REFERENCES ropgroup(idGroup)
+);
+
+CONSULTAS--------------------------------
+SELECT versionrop FROM rop ORDER BY versionrop DESC LIMIT 1;
+SELECT versiongroup FROM ropgroup ORDER BY versiongroup DESC LIMIT 1;
+
+SELECT idGroup, numGroup, qtropGroup FROM ropgroup WHERE versionGroup=?;
+
+SELECT idRop, numRop, versionRop, idGroup, labelRop, classRop FROM rop WHERE versionRop=?;

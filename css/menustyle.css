@@ -1,71 +1,110 @@
-
-
-*{
-  margin: 0;
-  padding: 0;
-  font-family: Noto Sans, sans-serif;
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+@import "colorstyle.css";
+/* O arquivo colorstyle.css contém as variáveis de cores que serão utilizadas
+  variável: --main-color
+  Cor de destaque: var(--main-color)
+  Cor de título: var(--main-txt-color)
+  Cor de texto: var(--second-txt-color)
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 body,html{
   height: 100%;
+  font-family: sans-serif;
   background: url('../img/MainPiclite.png') center;
+  background-attachment: fixed;
 }
+
 .services-section{
-  //background: url(../img/MainPiclite.png);
-  background-size: cover;
-  padding: 100px 0;
+  //display: flex;
+  //flex-wrap: wrap;
+  //height: 100%;
+  overflow: hidden;
 }
+
 .inner-width{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
   padding: 0 20px;
   overflow: hidden;
 }
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  //max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+.flex > div{
+  color: white;
+  display: block;
+  cursor: pointer;
+  flex: 1 1 300px;
+  margin: 30px;
+  //background-color: tomato;
+}
+
+.flex > p{
+  max-width: 300px;
+}
+
+.flex > div :hover .service-icon{
+  background: var(--main-color);
+  color: var(--main-txt-color);
+}
+
+.flex .title{
+  font-family: OCR A Std, monospace;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+.flex .desc{
+  font-size: 17px;
+  color: var(--second-txt-color);
+}
+
 .section-title{
   text-align: center;
-  color: #ddd;
+  color: var(--main-txt-color);
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 35px;
   font-family: OCR A Std, monospace;
+  padding-top: 30px;
 }
+
 .section-date{
   text-align: center;
-  color: #ddd;
+  color: var(--second-txt-color);
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
 }
 .border{
   width: 160px;
   height: 2px;
-  //background: #4caf50;
-  background: #82ccdd;
-  margin: 40px auto;
-}
-.services-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.service-box{
-  max-width: 25px;
-  min-width: 300px;
-  padding: 10px;
-  text-align: center;
-  color: #ddd;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
+  background: var(--main-color);
+  margin: 30px auto;
 }
 
 .service-icon{
   display: inline-block;
   width: 70px;
   height: 70px;
-  border: 3px solid #82ccdd;
-  color: #82ccdd;
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
   transform: rotate(45deg);
   margin-bottom: 30px;
   margin-top: 16px;
@@ -77,35 +116,29 @@ body,html{
   font-size: 26px;
 }
 .service-box:hover .service-icon{
-  background: #82ccdd;
-  color: #ddd;
-}
-.service-title{
-  font-size: 25px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.service-desc{
-  font-size: 14px;
+  background: var(--main-color);
+  color: var(--main-txt-color);
 }
 
-@media screen and (max-width:960px) {
-  .service-box{
-    min-width: 170px;
-    max-width: 20;
-  }
-}
-
-@media screen and (max-width:768px) {
-  .service-box{
-    min-width: 170px;
-    max-width: 25%;
+@media screen and (max-width:1280px) {
+  ::-webkit-scrollbar {
+    width: 5px;
   }
 }
 
 @media screen and (max-width:480px) {
-  .service-box{
-    min-width: 170px;
-    max-width: 25%;
+  .flex .title{
+    font-size: 15px;
   }
+
+  .flex .desc{
+    font-size: 15px;
+  }
+
+  .section-title{
+    font-size: 30px;
+    padding-top: 20px;
+  }
+
+  .section-date{
 }

@@ -1,3 +1,11 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+@import "colorstyle.css";
+/* O arquivo colorstyle.css contém as variáveis de cores que serão utilizadas
+  variável: --main-color
+  Cor de destaque: var(--main-color)
+  Cor de título: var(--main-txt-color)
+  Cor de texto: var(--second-txt-color)
+*/
 *{
   margin: 0;
   padding: 0;

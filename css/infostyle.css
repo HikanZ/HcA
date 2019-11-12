@@ -1,0 +1,44 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+@import "colorstyle.css";
+/* O arquivo colorstyle.css contém as variáveis de cores que serão utilizadas
+  variável: --main-color
+  Cor de destaque: var(--main-color)
+  Cor de título: var(--main-txt-color)
+  Cor de texto: var(--second-txt-color)
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,html{
+  overflow: hidden;
+  height: 100%;
+  font-family: sans-serif;
+  background: url('../img/MainPiclite.png') center;
+  background-attachment: fixed;
+}
+
+.info{
+  max-width: 1000px;
+  height: 100%;
+  color: white;
+  text-align: justify;
+  font-size: 20px;
+  margin: auto;
+  align-items: center;
+  padding: 5px;
+}
+.info h1{
+  padding-top: 20px;
+  float: left;
+  font-size: 35px;
+  font-family: OCR A Std, monospace;
+  border-bottom: 6px solid var(--main-color);
+  text-transform: uppercase;
+}
+.info p{
+  text-indent: 5%;
+  padding: 20px;
+}

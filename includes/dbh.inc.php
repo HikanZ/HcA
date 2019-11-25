@@ -1,5 +1,10 @@
 <?php
 
+/*$servername = "localhost";
+$dBUsername = "root";
+$dBPassword = "";
+$dBName = "auditoriahca";*/
+
 $servername = "us-cdbr-iron-east-05.cleardb.net";
 $dBUsername = "bf4c680fa2b474";
 $dBPassword = "44085d68";

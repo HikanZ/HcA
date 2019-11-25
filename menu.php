@@ -25,6 +25,7 @@
           document.getElementById("year").innerHTML = d.getFullYear();
         </script>
         </h2>
+        <h2 class="section-login-info"> Este é o seu login nº, xxxxx. <br>Seu último login foi dd/mm/aaaa hh/mm.</h2>
 
 
         <div class="border"></div>

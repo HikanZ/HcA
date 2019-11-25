@@ -1,3 +1,5 @@
+CREATE DATABASE auditoriahca;
+
 CREATE TABLE users (
 idUsers int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 uidUsers TINYTEXT NOT NULL,
@@ -8,6 +10,8 @@ roleUsers TINYTEXT,
 birthUsers TINYTEXT,
 adminSystem INT(1) NOT NULL
 );
+
+INSERT INTO users (uidUsers, uidLastUsers, emailUsers, pwdUsers, roleUsers, BirthUsers, adminSystem) VALUES ('Guilherme', 'Kanashiro', 'gui@gmail.com','$2y$10$205UGrPm1It2.BjCPFZJZu3OiUW2sTmITcwx0zdeBxZNWoSB/qg7y','Estagiário','',1);
 
 CREATE TABLE ropgroup (
 idGroup int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,

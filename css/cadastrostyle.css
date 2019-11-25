@@ -45,7 +45,7 @@ body,html{
 
 .login h2{
   float: left;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .signuperror{
@@ -108,6 +108,7 @@ body,html{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: var(--second-txt-color);
 }
 
 /* Hide the browser's default checkbox */

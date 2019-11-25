@@ -25,6 +25,21 @@ if (isset($_POST['group-rop-final-submit'])) {
   $roplabel = $_POST['rop'];
   $ropclass = $_POST['classrop'];
 
+  //Inserindo os grupos na tabela ropgroup
+  for ($i=1; $i <= $ropnumgroup  ; $i++) {
+    $sql = "INSERT INTO ropgroup (numGroup, versionGroup, nameGroup, qtropGroup) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_stmt_init($conn); //Aqui faz a conexão com o banco
+    if (!mysqli_stmt_prepare($stmt, $sql)) { //Se houver algum erro de sql
+      header("Location: ../cadastro.php?error=sqlerror"); //Retornará à pag anterior
+      exit();
+    }
+    else { //Se a conexão for bem sucedida, fará a inclusão do numgrouprop
+      mysqli_stmt_bind_param($stmt, "iisi", $i, $ropversion, $ropgroupname[$i], $ropgroupqtd[$i]);
+      mysqli_stmt_execute($stmt); // Executa o statement
+    }
+  }
+
+
   for ($i=1; $i <= $ropnumgroup  ; $i++) {
     for ($j=1; $j <= $ropgroupqtd[$i]  ; $j++) {
       $sql = "SELECT idGroup FROM ropgroup WHERE versionGroup=? AND nameGroup=?;";
@@ -65,7 +80,15 @@ if (isset($_POST['group-rop-final-submit'])) {
   }
   mysqli_stmt_close($stmt);
   mysqli_close($conn);
-  //var_dump($_POST);
+  /*
+  var_dump($_POST);
+  echo '<br><br>';
+  for ($i=1; $i <= $ropnumgroup; $i++) {
+    for ($j=1; $j <= $ropgroupqtd[$i]; $j++) {
+      echo 'i=['.$i.'] e j=['.$j.'] = '.$ropclass[$i][$j].'<br><br>';
+      // code...
+    }
+  }*/
   header("Location: ../menu.php?rop=success"); //Retorna à pag anterior com sucesso
   exit();
 

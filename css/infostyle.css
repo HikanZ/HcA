@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 body,html{
-  overflow: hidden;
+  //overflow: hidden;
   height: 100%;
   font-family: sans-serif;
   background: url('../img/MainPiclite.png') center;

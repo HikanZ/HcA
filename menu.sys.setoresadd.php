@@ -1,18 +1,17 @@
 <?php
   require "header2.php";
-  if ($_SESSION['admincheck']!==1 && $_SESSION['admincheck']!==7) {
+  if (empty($_SESSION['userId'])) {
     header("Location: index.php");
     exit();
   }
 ?>
-  <title> Cadastro de Versão | Sistema HcA </title>
-  <link rel="stylesheet" href="css/newropstyle.css">
+  <title> Cadastro de Setor | Sistema HcA </title>
+  <link rel="stylesheet" href="css/cadastrostyle.css">
 
 <main>
-  <div class="login1">
-    <h1>Cadastro de Versão</h1>
-      <h2> <?php
-      /*
+  <div class="login">
+    <h1>Cadastro de Setor</h1>
+      <h2><?php
         if (isset($_GET[''])) {
           if ($_GET['signup']=="success") {
             echo '<p class="signupsuccess"> Cadastrado com sucesso</p>';
@@ -32,18 +31,15 @@
             }
           }
         }else echo "Os campos marcados não podem ser vazios";
-    */
-    ?> </h2>
-      <form class="" action="new-rop-group.php" method="post">
+    ?></h2>
+      <form class="" action="includes/setoradd.inc.php" method="post">
         <div class="textbox">
-          <input class="i2" type="number" name="versionrop" placeholder="Insira a versão (ano) [aaaa] *">
+          <i class="fas fa-clinic-medical"></i>
+          <input type="text" name="uidsetor" placeholder="Setor *" autocomplete="new-password">
         </div>
 
-        <div class="textbox">
-          <input class="i2" type="number" name="numgrouprop" placeholder="Insira a quantidade de grupos *">
-        </div>
-
-        <button class="btn" type="submit" name="group2-submit">Próxima etapa (1/3)</button>
+        <button class="btn" type="submit" name="signup-submit">Cadastrar</button>
+        <!--<input type="button" class="btn" value="Cadastrar" onclick="window.location.href='menu.php'">-->
     </form>
   </div>
 

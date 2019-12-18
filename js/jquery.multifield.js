@@ -101,7 +101,12 @@
 			});
 
 			// Fix radio buttons: update name [i] to [i+1]
-			newChild.find('input[type="radio"]').each(function(){var name=$(this).attr('name');$(this).attr('name',name.replace(/([0-9]+)/g,1*(name.match(/([0-9]+)/g))+1));});
+			newChild.find('input[type="radio"]').each(function(){
+        var name=$(this).attr('name');
+
+        //$(this).attr(    'name',name.replace(   /([0-9]+)/g,1*(name.match(/([0-9]+)/g))+1)    );
+        $(this).attr(    'name',name.replace(    /\[(\d+)\]/, function(fullMatch, n) { return "[" + (Number(n) + 1) + "]";})    );
+      });
 			// Reset radio button selection
 			$('input[type=radio]',newChild).attr('checked', false);
 
@@ -121,14 +126,14 @@
 		 * Remove existing section
 		 */
 		removeSection : function(section){
-			if (confirm(this.localize_i18n.multiField.messages.removeConfirmation)){
+			/*if (confirm(this.localize_i18n.multiField.messages.removeConfirmation)){*/
 				var sectionsCount = this.getSectionsCount();
 
 				if(sectionsCount<=2){
 					$(this.config.btnRemove,this.$elem).hide();
 				}
 				section.slideUp('fast', function () {$(this).detach();});
-			}
+			/*}*/
 		},
 
 		/*

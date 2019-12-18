@@ -18,7 +18,7 @@
 }
 
 body,html{
-  height: 100%;
+  height: 90%;
   font-family: sans-serif;
   background: url('../img/MainPiclite.png') center;
   background-attachment: fixed;
@@ -125,6 +125,15 @@ body,html{
 }
 .service-box:hover .service-icon{
   background: var(--main-color);
+  color: var(--main-txt-color);
+}
+
+.backbtn{
+  cursor: pointer;
+  color: var(--main-color);
+}
+
+.backbtn:hover{
   color: var(--main-txt-color);
 }
 

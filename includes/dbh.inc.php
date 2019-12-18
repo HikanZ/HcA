@@ -3,7 +3,9 @@
 /*$servername = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
-$dBName = "auditoriahca";*/
+$dBName = "hca";*/
+/*$dBName = "auditoriahca";*/
+
 
 $servername = "us-cdbr-iron-east-05.cleardb.net";
 $dBUsername = "bf4c680fa2b474";

@@ -21,33 +21,52 @@ if (isset($_POST['login2-submit'])) {
     exit();
   }// FIM if (empty($mailuid) || empty($password)){
   else {
-    $sql = "SELECT * FROM users WHERE emailUsers=?";
+    $sql = "SELECT * FROM users WHERE emailUsers=?"; //Verifica se o email confere
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) { //Se houver algum erro de sql
       header("Location: ../index.php?error=sqlerror"); //Retornará à pag anterior
       exit();
     }
-    else {
+    else { //Se o email conferir e não tiver erro de sql, a senha será conferida
       mysqli_stmt_bind_param($stmt, "s", $mailuid);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
       if ($row = mysqli_fetch_assoc($result)) {
-        $pwdCheck = password_verify($password2, $row['pwdUsers']);
-        if ($pwdCheck == false) {
-          header("Location: ../index.php?error=wrongpwd"); //Retornará à pag anterior
-          exit();
-        }
-        else if ($pwdCheck == true) {
-          session_start();
-          $_SESSION['userId'] = $row['idUsers'];
-          $_SESSION['userUid'] = $row['uidUsers'];
-          $_SESSION['admincheck'] = $row['adminSystem'];
-          header("Location: ../menu.php?login=success"); //Retornará à pag anterior
-          exit();
-        }else {
-          header("Location: ../index.php?error=nouser"); //Retornará à pag anterior
-          exit();
-        }
+        if ($row['activeUsers']!=1){
+          //Verifica se a conta está ativa, se for diferente de 1, significa que não está ativa
+          header("Location: ../index.php");
+        }else{
+          $pwdCheck = password_verify($password2, $row['pwdUsers']);
+          if ($pwdCheck == false) { //Se a senha não for igual ao email usado
+            header("Location: ../index.php?error=wrongpwd"); //Retornará à pag anterior
+            exit();
+          }
+          else if ($pwdCheck == true) {
+            session_start();
+            $_SESSION['userId'] = $row['idUsers'];
+            $_SESSION['userUid'] = $row['uidUsers'];
+            $_SESSION['userLastUid'] = $row['uidLastUsers'];
+            $_SESSION['admincheck'] = $row['adminSystem'];
+            $_SESSION['lastLogin'] = $row['lastLogin'];
+            $_SESSION['countLogin'] = ++$row['countLogin'];
+            //$_SESSION[''] =$row
+            $sql = "UPDATE users SET countLogin=? , lastLogin=NOW() WHERE idUsers=?";
+            $stmt = mysqli_stmt_init($conn); //Aqui faz a conexão com o banco
+            if (!mysqli_stmt_prepare($stmt, $sql)) { //Se houver algum erro de sql
+              header("Location: ../index.php?error=sqlerror"); //Retornará à pag anterior
+              exit();
+            }
+            else { //Se a conexão for bem sucedida, fará a inclusão do numgrouprop
+              mysqli_stmt_bind_param($stmt, "ii", $_SESSION['countLogin'], $_SESSION['userId']);
+              mysqli_stmt_execute($stmt); // Executa o statement
+            }
+            header("Location: ../menu.php?login=success"); //
+            exit();
+          }else {
+            header("Location: ../index.php?error=nouser"); //Retornará à pag anterior
+            exit();
+          }
+        }//Fim do else verificação de conta ativa
       }
       else {
         header("Location: ../index.php?error=nouser"); //Retornará à pag anterior

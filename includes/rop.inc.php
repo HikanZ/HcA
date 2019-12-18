@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['admincheck']!==1) {
+if ($_SESSION['admincheck']!==1 && $_SESSION['admincheck']!==7) {
   header("Location: ../menu.php?error=ropfinal");
   exit();
 }

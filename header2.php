@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
-  <nav>
-    <div class="logo">
-        <h4><a href="index.php">SISTEMA HcA</a></h4>
+  <nav class="navig">
+    <div class="logo1">
+        <a href="index.php">SISTEMA HcA</a>
     </div>
     <?php
     $link_menu = 'menu.php';
-    $link_pubrop = 'pub-rop.php';
+    $link_pubcontato = 'pub-rop.php';
     $link_pubproj = 'pub-proj.php';
     $link_pubsobre = 'pub-sobre.php';
     $link_logout = 'includes/logout.inc.php';
       if (isset($_SESSION['userId'])) { ?>
         <ul class="nav-links">
           <a href=" <?php echo $link_menu; ?>     ">Home</a>
-          <a href=" <?php echo $link_pubrop; ?>   ">ROP</a>
           <a href=" <?php echo $link_pubproj; ?>  ">Projeto</a>
+          <a href=" <?php echo $link_pubcontato; ?>   ">Contato</a>
           <a href=" <?php echo $link_pubsobre; ?> ">Sobre</a>
           <a class='sair' href=" <?php echo $link_logout; ?> ">Sair</a>
         </ul>
@@ -39,8 +39,8 @@
         </div>
       <?php }else { ?>
         <ul class="nav-links">
-          <a href=" <?php echo $link_pubrop; ?>   ">ROP</a>
-          <a href=" <?php echo $link_pubproj; ?>  ">Projeto</a>
+        <a href=" <?php echo $link_pubproj; ?>  ">Projeto</a>
+        <a href=" <?php echo $link_pubcontato; ?>   ">Contato</a>
           <a href=" <?php echo $link_pubsobre; ?> ">Sobre</a>
         </ul>
         <div class="burger">

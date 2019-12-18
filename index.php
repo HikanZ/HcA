@@ -20,7 +20,7 @@
           <h1>Login</h1>
           <div class="textbox">
             <i class="fas fa-user"></i>
-            <input type="text" name="loginmail" placeholder="Email" autocomplete="new-password">
+            <input type="text" name="loginmail" placeholder="Email">
           </div>
 
           <div class="textbox">

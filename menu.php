@@ -25,39 +25,44 @@
           document.getElementById("year").innerHTML = d.getFullYear();
         </script>
         </h2>
-        <h2 class="section-login-info"> Este é o seu login nº, xxxxx. <br>Seu último login foi dd/mm/aaaa hh/mm.</h2>
+        <h2 class="section-login-info"> Este é o seu login nº, <?php echo $_SESSION['countLogin']?>. <br>Seu último login foi em <?php echo $_SESSION['lastLogin']?>.</h2>
 
 
         <div class="border"></div>
+        <?php
+          $linkusers = "window.location.href='menu.users.php'";
+          $linksystem = "window.location.href='menu.sys.php'";
+          $newroplink = "window.location.href='new-rop.php'";
+          $linkauditoria ="window.location.href='menu.auditoria.php'";
+          $linkrelatorio = "window.location.href='menu.report.php'";
+        ?>
         <!-- AREA DO ADMINISTRADOR -->
         <?php
-          if ($_SESSION['admincheck']==1){
+          if ($_SESSION['admincheck']==1 || $_SESSION['admincheck']==7){
             echo '<h2 class="section-date">Área de administrador<h2>';
-            $cadastrolink = "window.location.href='cadastro.php'";
-            $cadastrolink = "window.location.href='cadastro.php'";
-            $newroplink = "window.location.href='new-rop.php'";
+
         ?>
         <section class="flex">
           <div class="service-box">
-            <div class="service-icon" onclick=" <?php echo $cadastrolink; ?> ">
-              <i class="fas fa-user-plus"></i>
+            <div class="service-icon" onclick=" <?php echo $linkusers; ?> ">
+              <i class="fas fa-users"></i>
             </div>
-            <p class="title">Novo usuário</p>
-            <p class="desc">Adicionar usuário</p>
+            <p class="title">Usuários</p>
+            <p class="desc">Gerenciar usuários</p>
           </div>
           <div class="service-box">
-            <div class="service-icon" onclick=" <?php echo $cadastrolink; ?> ">
-              <i class="fas fa-user-times"></i>
+            <div class="service-icon" onclick=" <?php echo $linksystem; ?> ">
+              <i class="fas fa-laptop-code"></i>
             </div>
-            <p class="title">Remover usuário</p>
-            <p class="desc">Excluir usuário</p>
+            <p class="title">BLOCK Sistema</p>
+            <p class="desc">Gerenciar sistema e setores</p>
           </div>
           <div class="service-box">
             <div class="service-icon" onclick=" <?php echo $newroplink; ?> ">
               <i class="fas fa-calendar-check"></i>
             </div>
-            <p class="title">Novo ROP</p>
-            <p class="desc">Nova versão do ROP</p>
+            <p class="title">BLOCK ROP</p>
+            <p class="desc">Gerenciar ROPs</p>
           </div>
         </section>
         <div class="border"></div>
@@ -66,25 +71,25 @@
         <!-- ÁREA COMUM -->
         <section class="flex">
           <div class="service-box">
-            <div class="service-icon" onclick="window.location.href='audit.php'">
+            <div class="service-icon" onclick="<?php echo $linkauditoria; ?>">
               <i class="fas fa-tasks"></i>
             </div>
             <p class="title">Check-list</p>
             <p class="desc">Iniciar auditoria</p>
           </div>
           <div class="service-box">
-            <div class="service-icon" onclick="window.location.href='#'">
+            <div class="service-icon" onclick=" <?php echo $linkrelatorio; ?> " >
               <i class="fas fa-chart-pie"></i>
             </div>
-            <p class="title">Visão Geral</p>
+            <p class="title">Relatório</p>
             <p class="desc">Visão geral, gráficos e relatórios das auditorias</p>
           </div>
           <div class="service-box">
             <div class="service-icon" onclick=" <?php echo $newroplink; ?> ">
-              <i class="fas fa-unlock-alt"></i>
+              <i class="fas fa-user-edit"></i>
             </div>
-            <p class="title">Alterar senha</p>
-            <p class="desc">Alterar a senha do usuário</p>
+            <p class="title">BLOCK Minha conta</p>
+            <p class="desc">Gerenciar minha conta</p>
           </div>
         </section>
         <!-- FIM ÁREA COMUM -->

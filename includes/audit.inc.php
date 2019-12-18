@@ -16,13 +16,13 @@ if (isset($_POST['auditoria-submit'])) {
       $DT = new DateTime( 'now', new DateTimeZone( 'America/Sao_Paulo') );
   }catch( Exception $e )
   {
-      echo 'Erro ao instanciar objeto.';
-      echo $e->getMessage();
+      /*echo 'Erro ao instanciar objeto.';
+      echo $e->getMessage();*/
       exit();
   }
-  echo "<br>";
+  /*echo "<br>";
   echo $DT->format('Y-m-d H:i:s');
-  echo "<br><br>";
+  echo "<br><br>";*/
 
   $idUsers = $_SESSION['userId'];
   $uidUsers = $_POST['uidfullUser'];
@@ -53,7 +53,7 @@ if (isset($_POST['auditoria-submit'])) {
   $sql = "SELECT idAudit FROM audit WHERE (idUsers=? AND uidfullUsers=? AND idSetor=? AND versionRop=? AND startAudit=? AND endAudit=?);";
   $stmt = mysqli_stmt_init($conn); //Aqui faz a conexão com o banco
   if (!mysqli_stmt_prepare($stmt, $sql)) { //Se houver algum erro de sql
-    header("Location: ../cadastro.php?error=sqlerror"); //Retornará à pag anterior
+    header("Location: ../menu.auditoria.php?error=sqlerror"); //Retornará à pag anterior
     exit();
   }
   else { //Se a conexão for bem sucedida, fará a inclusão do numgrouprop
@@ -69,22 +69,22 @@ if (isset($_POST['auditoria-submit'])) {
   $idGroup = $_SESSION['idGroup'];
   $numGroup = $_SESSION['numGroupID'];
   $qtropGroup = $_SESSION['qtropGroup'];
-  var_dump($_POST);
+  /*var_dump($_POST);*/
   echo "<br><br>";
   $i = 1; $j = 2;
-  var_dump($_POST["rop".$i.$j]);
+  /*var_dump($_POST["rop".$i.$j]);*/
 
   $countRop = 1;
   for ($i = 1; $i<= sizeof($numGroup); $i++){
     for ($j = 1; $j<=$qtropGroup[$i]; $j++ ){
-      echo "<br>Grupo ".$i. " Rop ". $j .": ";
+      /*echo "<br>Grupo ".$i. " Rop ". $j .": ";*/
       $arr_lenght = count($_POST["rop".$i.$j]);
-      echo $arr_lenght.": ";
+      /*echo $arr_lenght.": ";*/
       $k2 = 0;
       for ($k = 0; $k < $arr_lenght; $k++){
         while(empty($_POST["rop".$i.$j][$k2])){$k2++;}
-        echo $k2.': ';
-        echo $_POST["rop".$i.$j][$k2]." ";
+        /*echo $k2.': ';
+        echo $_POST["rop".$i.$j][$k2]." ";*/
         $sql = "INSERT INTO answer (idAudit, idRop, idGroup, numGroup, numRop, classRop, resultAnswer, infoAnswer) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($conn); //Aqui faz a conexão com o banco
         if (!mysqli_stmt_prepare($stmt, $sql)) { //Se houver algum erro de sql
@@ -106,7 +106,7 @@ if (isset($_POST['auditoria-submit'])) {
 
 
 
-
+  header("Location: ../menu.auditoria.php?success");
   //Limpar as variáveis da sessão -> Descomentar qdo terminar
   /*unset($_SESSION['idRop']);
   unset($_SESSION['classRop']);

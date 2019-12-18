@@ -191,7 +191,7 @@
 
   // TRATAMENTO DE MENSAGEM NO http_build_url
   $msg = "";
-  if (isset($_GET['emptySetor']) || isset($_GET['error']) ) {
+  if (isset($_GET['emptySetor']) || isset($_GET['error'])) {
     if ($_GET['emptySetor']=="") {
       $msg = "O setor não pode ser vazio.";
     }else
@@ -201,13 +201,16 @@
       }
     }
   }
+  if (isset($_GET['success'])){
+    $msg = "Auditoria realizada com sucesso.";
+  }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->

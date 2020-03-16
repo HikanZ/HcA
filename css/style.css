@@ -1,157 +1,23 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+/*
+Errno::ENOENT: No such file or directory @ rb_sysopen - scss/style.scss
 
-.navig{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 6vh;
-  background-color: #101010;
-  font-family: 'Poppins', sans-serif !important;
-  z-index: 2020;
-}
-
-.verticalspace{
-  margin-top: 60px;
-}
-
-.logo1{
-  color: white !important;
-  letter-spacing: 8px !important;
-  font-size: 20px !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.logo1 a:link, a:visited, a:active{
-  text-decoration: none !important;
-  color: white !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-.logo1 a:hover{
-  color: var(--main-color) !important;
-}
-
-.nav-links{
-  display: flex;
-  justify-content: space-around;
-  width: 55%;
-}
-.nav-links li{
-  list-style: none !important;
-}
-
-.nav-links a{
-  color: white;
-  text-decoration: none !important;
-  letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.nav-links a:hover{
-  color: var(--main-color) !important;
-}
-
-.nav-links a.sair:hover{
-  color: red !important;
-}
-
-.burger{
-  display: none;
-  cursor: pointer;
-}
-
-.burger div{
-  width: 25px;
-  height: 2px;
-  background-color: white;
-  margin: 5px;
-  transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 1424px){
-  .verticalspace{
-    margin-top: 55px;
-  }
-  .nav-links{
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 1024px){
-  .verticalspace{
-    margin-top: 55px;
-  }
-  .nav-links{
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 890px){
-  .verticalspace{
-    margin-top: 55px;
-  }
-  body{
-    overflow-x: hidden;
-  }
-  .nav-links{
-    position: absolute;
-    right: 0px;
-    height: 92vh;
-    top: 6vh;
-    background-color: #101010;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-    z-index: 2020;
-  }
-  .nav-links a{
-    //opacity: 0;
-  }
-  .burger{
-    display: block;
-  }
-}
-
-.nav-active{
-  transform: translateX(0%);
-}
-
-@keyframes navLinkFade{
-  //from{
-  //  opacity: 0;
-  //  transform: translateX(50px);
-  //}
-  //to{
-  //  opacity: 1;
-  //  transform: translateX(0px);
-  //}
-}
-
-.toggle .line1{
-  transform:  rotate(-45deg) translate(-5px, 5px);
-}
-
-.toggle .line2{
-  opacity: 0;
-}
-.toggle .line3{
-  transform:  rotate(45deg) translate(-5px, -5px);
-}
-
-li.fade {
-  opacity: 1;
-}
+Backtrace:
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:454:in `read'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:454:in `update_stylesheet'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin/compiler.rb:294:in `watch'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/plugin.rb:109:in `method_missing'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/sass_scss.rb:358:in `watch_or_update'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/base.rb:50:in `parse'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/lib/sass/exec/base.rb:18:in `parse!'
+/Library/Ruby/Gems/2.3.0/gems/sass-3.6.0/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:22:in `load'
+/usr/local/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Errno::ENOENT: No such file or directory @ rb_sysopen - scss/style.scss"; }

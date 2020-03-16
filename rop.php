@@ -1,14 +1,10 @@
 <!--================ Start Require Area =================-->
-<?php require "header.php";
-
-//Se uma sessão já estiver iniciada, ou seja, alguém já estiver logado
-if (isset($_SESSION['userId'])) {
-	header("Location: index.php"); //encaminhará automaticamente para o menu principal.
-	exit(); // e encerra evitando qualquer carregamento e consumo desnecessário de banda.
-}
+<?php
+	require "header.php";
+	require "inc/links.php";
+	require "inc/access-admin.php";
 ?>
 <!--================ End Require Area =================-->
-
 <!DOCTYPE html>
 <html lang="pt-br" class="">
 
@@ -20,9 +16,10 @@ if (isset($_SESSION['userId'])) {
 	<meta name="keywords" content="">	<!-- Meta Keyword -->
 	<meta charset="UTF-8">	<!-- meta character set -->
 
-	<title>HcA</title>	<!-- Site Title -->
+	<title>ROPs | Sistema HcA</title>	<!-- Site Title -->
 
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,500,500i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<!--link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,500,500i" rel="stylesheet"-->
 	<!-- CSS ============================================= -->
 	<link rel="stylesheet" href="css/linearicons.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -37,29 +34,53 @@ if (isset($_SESSION['userId'])) {
 
 <body style="background: url('img/MainPiclite.png') center; background-attachment: fixed;">
 
-	<!--================ Start Content Area =================-->
-    <div class="wrapper-main">
-      <div class="d1">
-        <img src="img/logologin.png" alt="">
-      </div>
-      <div class="login">
-        <form class="" action="inc/login.inc.php" method="post">
-          <h1>Login</h1>
-          <div class="textbox align-items-center">
-            <i class="fas fa-user"></i>
-            <input type="text" name="loginmail" placeholder="Email" required class="single-input">
-          </div>
-
-          <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="loginpwd" placeholder="Senha" autocomplete="new-password" required class="single-input">
-          </div>
-          <button class="btn" type="submit" name="login2-submit">Entrar</button>
-					<a onclick="window.location.href='pub-cadastro.php'" style="text-align: center; font-weight: 100; color: #4db8ff; cursor:pointer;"> Cadastre-se </a> <a> | </a> <a onclick="window.location.href='pub-esquecisenha.php'" style="text-align: center; font-weight: 100; color: #4db8ff; cursor:pointer;"> Esqueci a minha senha </a>
-        </form>
-      </div>
-    </div>
-	<!--================ End Content Area =================-->
+	<section class="team-area section-gap-top">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8 text-center">
+					<div class="section-title" style="padding-bottom: 40px;">
+						<h1 style="letter-spacing: 3px; text-transform: none;">
+							<label class="backbtn" onclick="<?php echo $linkmenu; ?>"><i class="fas fa-angle-left"></i></label>
+							ROPs</h1>
+					</div>
+				</div>
+			</div>
+			<div class="border1"></div>
+			<div class="row">
+				<!-- single member -->
+				<div class="col-lg-4 col-md-4 flex">
+					<div class="service-box">
+						<div class="service-icon" onclick=" <?php echo $linkropadd; ?> ">
+							<i class="fas fa-calendar-check"></i>
+						</div>
+						<p class="title">Nova Versão ROP</p>
+						<p class="desc">Cadastrar uma nova versão do ROP</p>
+					</div>
+				</div>
+				<!-- single member -->
+				<div class="col-lg-4 col-md-4 flex">
+					<div class="service-box">
+						<div class="service-icon" onclick=" <?php echo $linkroplist; ?> ">
+							<i class="fas fa-calendar-alt"></i>
+						</div>
+						<p class="title">Histórico ROP</p>
+						<p class="desc">Listar todas as versões de ROPs</p>
+					</div>
+				</div>
+				<!-- single member -->
+				<div class="col-lg-4 col-md-4 flex">
+					<div class="service-box">
+						<div class="service-icon" onclick=" <?php echo $linkropremove; ?> ">
+							<i class="fas fa-calendar-times"></i>
+						</div>
+						<p class="title">Excluir Versão ROP</p>
+						<p class="desc">Excluir uma versão do ROP</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Team Area =================-->
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
@@ -75,7 +96,8 @@ if (isset($_SESSION['userId'])) {
 	<script src="js/isotope.pkgd.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/main.js"></script>
-
 </body>
+
 </html>
